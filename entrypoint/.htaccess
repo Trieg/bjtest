@@ -1,0 +1,37 @@
+
+AddDefaultCharset UTF-8
+ServerSignature Off
+
+Options +FollowSymlinks
+Options +Indexes
+
+
+<FilesMatch "\.(htaccess|yaml|cfg|ini|log|tpl|phtml|twig|sqlite|config)$">
+    <IfModule !mod_authz_core.c>
+		Order deny,allow
+        Deny from all
+        Satisfy All
+    </IfModule>
+	<IfModule mod_authz_core.c>    
+		Require all denied
+	</IfModule>
+</FilesMatch>
+
+SetEnv          TR_PHP_DEV 1
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+	
+    RewriteEngine On
+	
+	RewriteBase /
+	
+	RewriteCond %{QUERY_STRING} PHPSESSID=.*$
+	RewriteRule .* %{REQUEST_URI}? [R=301,L]
+	
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ entrypoint/index.php?$1 [NC,L,QSA]
+</IfModule>

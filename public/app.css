@@ -1,0 +1,52 @@
+
+
+
+
+.app-footer {
+    padding: 2.5rem 0;
+    color: #727272;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: 0.05rem solid #e5e5e5;
+}
+
+.mt-25 {
+	margin-top: 25px !important;
+}
+
+
+
+.form-invalid {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: .875em;
+    color: #dc3545;
+}
+
+.w-10 {
+	width : 10%;
+}
+.w-20 {
+	width : 20%;
+}
+.w-40 {
+	width : 40%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
