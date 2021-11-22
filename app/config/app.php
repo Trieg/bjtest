@@ -3,9 +3,9 @@
 return [
 	
 	'database'     => [
-		'dsn'              => 'mysql:dbname=bjtest;host=127.0.0.1',
-		'user'             => 'root',
-		'password'         => 'V123nera!',
+		'dsn'              => 'mysql:dbname=uploadmax;host=148.251.155.229;port=3310',
+		'user'             => 'max',
+		'password'         => 'vG9tR2hH4ltY8w',
 	],
 	
 	'admin'        => [
