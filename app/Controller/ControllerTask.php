@@ -46,7 +46,7 @@ class ControllerTask extends Controller
 			$taskText           = $this->getPost('task_text');
 			$taskStatusDone     = $this->getPost('status_done');
 			
-			$statusEdited       = $taskText == $taskCurrent['task_text'] ? 1 : 2;
+			$statusEdited       = $taskCurrent['task_edited'] == 1 ? ($taskText == $taskCurrent['task_text'] ? 1 : 2) : $taskCurrent['task_edited'] ;
 			
 			if(empty($taskText)) {
 				$response['errors']['task_text'] = 'Поле обязательно для заполнения!';
